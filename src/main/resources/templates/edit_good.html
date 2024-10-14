@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ru">
+<meta charset="UTF-8">
+<title>Редактирование груза</title>
+<head th:replace="index :: head"></head>
+<body>
+<blockquote class="blockquote text-center"><h1>Редактирование груза</h1></blockquote>
+<div class="row">
+    <div class="col-md-8 offset-md-4">
+        <form action="#" th:action="@{/save}" th:object="${goods}" method="post">
+            <table>
+                <tr>
+                    <td>ID:</td>
+                    <td><input type="text" th:field="*{ID}" readonly="readonly"></td>
+                </tr>
+                <tr>
+                    <td>Название:</td>
+                    <td><input type="text" th:field="*{goodName}"></td>
+                </tr>
+                <tr>
+                    <td>Содержимое:</td>
+                    <td><input type="text" th:field="*{contents}"></td>
+                </tr>
+                <tr>
+                    <td>Город отправления:</td>
+                    <td><input type="text" th:field="*{shipmentCity}"></td>
+                </tr>
+                <tr>
+                    <td>Дата отправления</td>
+                    <td><input type="date" th:field="*{dateOfShipment}"></td>
+                </tr>
+                <tr>
+                    <td>Город прибытия:</td>
+                    <td><input type="text" th:field="*{arrivalCity}"></td>
+                </tr>
+                <tr>
+                    <td>Дата прибытия:</td>
+                    <td><input type="date" th:field="*{dateOfArrival}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false"
+                                autocomplete="off">Отправить
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>
